@@ -57,6 +57,11 @@ namespace Calculadora_CentroMassa_CS_Console
 
         public void AtualizarMapa()
         {
+            CalcularCentro.CarregarMassa();
+            CalcularCentro.CarregarLinha();
+            CalcularCentro.CarregarColuna();
+            CalcularCentro.EncontrarCentro();
+
             for (int l = 1; l < 21; l++)
             {
                 for (int c = 1; c < 51; c++)
@@ -68,6 +73,11 @@ namespace Calculadora_CentroMassa_CS_Console
             foreach(var item in Corpos.corpo)
             {
                 mapa[item.linha, item.coluna] = 'x';
+            }
+
+            if(corpo.Count > 1)
+            {
+                mapa[CalcularCentro.linha, CalcularCentro.coluna] = '@';
             }
         }
 

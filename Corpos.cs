@@ -42,7 +42,8 @@ namespace Calculadora_CentroMassa_CS_Console
 
         public static int Remover(int idRemover)
         {
-            int id = corpo.FindIndex(corpo => corpo.id == idRemover);
+            int id;
+            id = corpo.FindIndex(corpo => corpo.id == idRemover);
             corpo.RemoveAt(id);
             return id;
         }
