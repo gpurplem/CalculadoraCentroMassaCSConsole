@@ -55,21 +55,20 @@ namespace Calculadora_CentroMassa_CS_Console
 
         }
 
-        public void AtualizarMapa(List<_corpo_> corpo)
+        public void AtualizarMapa()
         {
-            for (int l = 1; l < 22; l++)
+            for (int l = 1; l < 21; l++)
             {
-                for (int c = 1; c < 52; c++)
+                for (int c = 1; c < 51; c++)
                 {
                      mapa[l, c] = ' ';
                 }
             }
 
-            foreach(var item in corpo)
+            foreach(var item in Corpos.corpo)
             {
-                //var a = item.linha;
+                mapa[item.linha, item.coluna] = 'x';
             }
-
         }
 
     }
