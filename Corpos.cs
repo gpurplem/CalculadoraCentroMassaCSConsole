@@ -26,7 +26,8 @@ namespace Calculadora_CentroMassa_CS_Console
 
         static public List<_corpo_> corpo = new List<_corpo_>();
 
-        public static void Adicionar(int l, int c, float m, int controle, int id)
+        //controle = 0, muda ID, != 0, não muda ID.
+        public static void Adicionar(int l, int c, float m, int controle, int idOriginal)
         {
             if(controle == 0)
             {
@@ -35,13 +36,13 @@ namespace Calculadora_CentroMassa_CS_Console
             }
             else
             {
-                corpo.Add(new _corpo_(id, l, c, m));
+                corpo.Add(new _corpo_(idOriginal, l, c, m));
             }            
         }
 
-        public static int Remover(int l, int c)
+        public static int Remover(int idRemover)
         {
-            int id = corpo.FindIndex(corpo => corpo.linha == l && corpo.coluna == c);
+            int id = corpo.FindIndex(corpo => corpo.id == idRemover);
             corpo.RemoveAt(id);
             return id;
         }

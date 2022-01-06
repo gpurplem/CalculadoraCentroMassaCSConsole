@@ -66,8 +66,11 @@ namespace Calculadora_CentroMassa_CS_Console
                 case 2:
                     try
                     {
-                        int[] coord = PegarCoordenadas();
-                        Corpos.Remover(coord[0], coord[1]);
+                        Console.WriteLine("Digite ID a ser removido: ");
+                        int idRemover = Int32.Parse(Console.ReadLine());
+
+                        Corpos.Remover(idRemover);
+                        
                     }
                     catch (Exception)
                     {
@@ -79,8 +82,9 @@ namespace Calculadora_CentroMassa_CS_Console
                     int id;
                     try
                     {
-                        int[] coord = PegarCoordenadas();
-                        id = Corpos.Remover(coord[0], coord[1]);                        
+                        Console.WriteLine("Digite ID a ser alterado: ");
+                        int idRemover = Int32.Parse(Console.ReadLine());
+                        id = Corpos.Remover(idRemover);
                     }
                     catch (Exception)
                     {
